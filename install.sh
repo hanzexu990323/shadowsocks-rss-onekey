@@ -8,6 +8,11 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
+    echo "==========================="
+    echo "???????????(????? y ) y/n"
+    echo "==========================="
+    read many_user
+
 . modules/advanced_encryption.sh
 . modules/config.sh
 . modules/init.sh
