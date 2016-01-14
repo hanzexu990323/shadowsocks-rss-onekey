@@ -4,25 +4,50 @@ Config()
 {
 if [ "${many_user}" = "y" ]; then
     #Config.py
+    echo "==========================="
     echo "Please input your mysql IP address"
+    echo "==========================="
     read ip
+    
+    echo "==========================="
     echo "Please input mysql port"
+    echo "==========================="
     read port
+    
+    echo "==========================="
     echo "Please input your mysql username"
+    echo "==========================="
     read user
+    
+    echo "==========================="
     echo "Please input your mysql password of user ${user}"
+    echo "==========================="
     read pass
+    
+    echo "==========================="
     echo "Please input your database name"
+    echo "==========================="
     read db
 
     #config.json
+    echo "==========================="
     echo "Please input the encrypt method you want to use"
+    echo "==========================="
     read encrypt
+    
+    echo "==========================="
     echo "Please input the protocol you want to use"
+    echo "==========================="
     read protocol
+    
+    echo "==========================="
     echo "Please input the obfs confusion method you want to use"
+    echo "==========================="
     read obfs
+    
+    echo "==========================="
     echo "Please input the obfs param you want to use"
+    echo "==========================="
     read obfs_param
 
     rm -f ~/shadowsocks/Config.py
