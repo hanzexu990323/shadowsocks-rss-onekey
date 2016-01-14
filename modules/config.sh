@@ -66,22 +66,39 @@ EOF
     else
     #/etc/shadowsocks.json
     
+    echo "==========================="
     echo "Please input the server port you want to use"
+    echo "==========================="
     read server_port
     
+    echo "==========================="
     echo "Please input the password you want to use"
+    echo "==========================="
     read server_password
     
+    echo "==========================="
     echo "Please input the encrypt method you want to use"
+    echo "==========================="
     read encrypt
+    
+    echo "==========================="
     echo "Please input the protocol you want to use"
+    echo "==========================="
     read protocol
+    
+    echo "==========================="
     echo "Please input the obfs confusion method you want to use"
+    echo "==========================="
     read obfs
+    
+    echo "==========================="
     echo "Please input the obfs param you want to use"
+    echo "==========================="
     read obfs_param
     
+    echo "==========================="
     echo "Config file is create in /etc/shadowsocks.json"
+    echo "==========================="
     
     cat > /etc/shadowsocks.json << EOF
     {
