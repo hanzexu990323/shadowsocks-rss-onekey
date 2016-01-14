@@ -105,4 +105,5 @@ EOF
     "workers": 1
 }
 EOF
+fi
 }
