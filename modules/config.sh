@@ -2,6 +2,7 @@
 
 Config()
 {
+if [ "${many_user}" = "y" ]; then
     #Config.py
     echo "Please input your mysql IP address"
     read ip
@@ -62,4 +63,46 @@ EOF
 }
 EOF
     echo "Config file is create in ~/shadowsocks/config.json"
+    else
+    #/etc/shadowsocks.json
+    
+    echo "Please input the server port you want to use"
+    read server_port
+    
+    echo "Please input the password you want to use"
+    read server_password
+    
+    echo "Please input the encrypt method you want to use"
+    read encrypt
+    echo "Please input the protocol you want to use"
+    read protocol
+    echo "Please input the obfs confusion method you want to use"
+    read obfs
+    echo "Please input the obfs param you want to use"
+    read obfs_param
+    
+    echo "Config file is create in /etc/shadowsocks.json"
+    
+    cat > /etc/shadowsocks.json << EOF
+    {
+    "server":"0.0.0.0",
+    "server_ipv6": "[::]",
+    "local_address":"127.0.0.1",
+    "local_port":1080,
+    "port_password":{
+        "$server_port":"$server_password",
+        "443":"password001x-2"
+    },
+    "timeout":120,
+    "method":"$encrypt",
+    "protocol": "$protocol",
+    "protocol_param": "",
+    "obfs": "$obfs",
+    "obfs_param": "$obfs_param",
+    "redirect": "",
+    "dns_ipv6": true,
+    "fast_open": false,
+    "workers": 1
+}
+EOF
 }
