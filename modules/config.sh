@@ -67,7 +67,10 @@ MANAGE_BIND_IP = '127.0.0.1'
 #make sure this port is idle
 MANAGE_PORT = 23333
 EOF
+
+echo "==========================="
     echo "Config file is create in ~/shadowsocks/Config.py"
+echo "==========================="
 
     cat > ~/shadowsocks/config.json << EOF
 {
