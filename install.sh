@@ -9,7 +9,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
     echo "==========================="
-    echo "是否使用数据库多用户版(站长请输入 y ) y/n"
+    echo "Use Manyuser Version with MySQL? (Webmaster please input ' y ') y/n"
     echo "==========================="
     read many_user
 
