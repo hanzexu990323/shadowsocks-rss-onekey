@@ -102,7 +102,7 @@ EOF
     echo "==========================="
     echo "Please input the password you want to use"
     echo "==========================="
-    read server_password
+    read server_password 
     
     echo "==========================="
     echo "Please input the encrypt method you want to use"
@@ -115,9 +115,62 @@ EOF
     read protocol
     
     echo "==========================="
-    echo "Please input the obfs confusion method you want to use"
-    echo "==========================="
-    read obfs
+
+    obfs="2"
+    echo "You have 6 options for  obfs."
+    echo "1: Use 'plain' "
+    echo "2: Use 'tls1.0_session_auth_compatibl' (Default)"
+    echo "3: Use 'http_simple' "
+    echo "4: Use 'tls_simple' "
+    echo "5: Use 'random_head' "
+    echo "6: Use 'tls1.0_session_auth' "
+    read -p "Enter your choice (1, 2, 3, 4, 5 or 6): " obfs
+
+    case "${obfs}" in
+    1)
+        echo "You will use 'plain' "
+        ;;
+    2)
+        echo "You will use 'tls1.0_session_auth_compatibl' "
+        ;;
+    3)
+        echo "You will use 'http_simple' "
+        ;;
+    4)
+        echo "You will use 'tls_simple' "
+        ;;
+    5)
+        echo "You will use 'random_head' "
+        ;;
+    6)
+        echo "You will use 'tls1.0_session_auth' "
+        ;;
+    *)
+        echo "No input,You will use 'tls1.0_session_auth_compatibl' "
+        obfs="2"
+    esac
+    if [[ "${obfs}" = "1"]]; then
+    obfs="plain"
+    elif[["${obfs}" = "2"]]; then
+    obfs="tls1.0_session_auth_compatibl"
+    elif[["${obfs}" = "3"]]; then
+    obfs="http_simple"
+    elif[["${obfs}" = "4"]]; then
+    obfs="tls_simple"
+    elif[["${obfs}" = "5"]]; then
+    obfs="random_head"
+    elif[["${obfs}" = "6"]]; then
+    obfs="tls1.0_session_auth"
+    fi
+     fi
+      fi
+       fi
+        fi
+         fi
+   # echo "==========================="
+    #echo "Please input the obfs confusion method you want to use"
+    #echo "==========================="
+    #read obfs
     
     echo "==========================="
     echo "Please input the obfs param you want to use"
