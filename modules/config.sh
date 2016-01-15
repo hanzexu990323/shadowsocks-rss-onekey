@@ -1,5 +1,4 @@
 #!/bin/bash
-
 Config()
 {
 if [ "${many_user}" = "y" ]; then
